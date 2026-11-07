@@ -1,0 +1,53 @@
+services:
+  ftelmarket-front:
+    image: node:22-alpine
+    container_name: ftelmarket-front
+    working_dir: /app
+    command: >
+      sh -c "corepack enable
+      && corepack prepare pnpm@10.11.0 --activate
+      && pnpm install --frozen-lockfile
+      && pnpm dev:app --host 0.0.0.0"
+    ports:
+      - "3000:3000"
+    environment:
+      VITE_BASE_URL: "http://localhost:3000"
+      VITE_API_BASE_URL: "http://localhost:5082/api"
+      COREPACK_ENABLE_DOWNLOAD_PROMPT: "0"
+      CHOKIDAR_USEPOLLING: "true"
+      npm_config_store_dir: /pnpm-store
+      NODE_COMPILE_CACHE: /tmp/node-compile-cache
+    volumes:
+      - .:/app
+      - node_modules:/app/node_modules
+      - pnpm-store:/pnpm-store
+
+#  ftelmarket-sqlserver:
+#    image: mcr.microsoft.com/mssql/server:2022-latest
+#    container_name: ftelmarket-sqlserver
+#    ports:
+#      - "1433:1433"
+#    environment:
+#      ACCEPT_EULA: "Y"
+#      MSSQL_SA_PASSWORD: "FtelMarket#2026"
+#      MSSQL_PID: Developer
+#    volumes:
+#      - sqlserver-data:/var/opt/mssql
+
+  ftelmarket-postgres:
+    image: postgres:17-alpine
+    container_name: ftelmarket-postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: ftelmarket
+      POSTGRES_PASSWORD: ftelmarket
+      POSTGRES_DB: ftelmarket
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+volumes:
+  node_modules:
+  pnpm-store:
+#  sqlserver-data:
+  postgres-data:

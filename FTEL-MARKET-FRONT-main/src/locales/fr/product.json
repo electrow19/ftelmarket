@@ -1,0 +1,78 @@
+{
+  "list": {
+    "title": "Catalogue",
+    "subtitle": "Jeux vidéo d'occasion",
+    "createButton": "Ajouter un jeu",
+    "search": "Rechercher un jeu",
+    "empty": "Aucun jeu dans le catalogue.",
+    "emptySearch": "Aucun jeu ne correspond à votre recherche.",
+    "count_one": "{{count}} jeu",
+    "count_other": "{{count}} jeux"
+  },
+  "columns": {
+    "name": "Jeu",
+    "category": "Plateforme",
+    "price": "Prix",
+    "stock": "Stock",
+    "createdAt": "Ajouté le",
+    "actions": "Actions"
+  },
+  "fields": {
+    "name": "Nom",
+    "description": "Description",
+    "price": "Prix",
+    "stock": "Stock",
+    "category": "Plateforme",
+    "categoryPlaceholder": "Choisir une plateforme"
+  },
+  "create": {
+    "title": "Ajouter un jeu",
+    "submit": "Ajouter",
+    "success": "Le jeu a été ajouté au catalogue.",
+    "error": "L'ajout a échoué."
+  },
+  "update": {
+    "title": "Modifier le jeu",
+    "submit": "Enregistrer",
+    "success": "Le jeu a été modifié.",
+    "error": "La modification a échoué."
+  },
+  "delete": {
+    "action": "Supprimer",
+    "title": "Supprimer ce jeu ?",
+    "description": "« {{name}} » sera définitivement retiré du catalogue.",
+    "confirm": "Supprimer",
+    "success": "Le jeu a été supprimé.",
+    "error": "La suppression a échoué."
+  },
+  "actions": {
+    "edit": "Modifier",
+    "cancel": "Annuler"
+  },
+  "pagination": {
+    "previous": "Précédent",
+    "next": "Suivant",
+    "page": "Page {{page}} sur {{total}}"
+  },
+  "apiContract": {
+    "toCreate": "Route à créer",
+    "validated": "Route validée",
+    "url": "URL à exposer",
+    "receivedError": "Erreur reçue",
+    "noError": "Aucune erreur reçue pour l'instant",
+    "expectedBody": "Corps attendu",
+    "expectedResponse": "Réponse attendue",
+    "noContent": "204 No Content, sans corps de réponse",
+    "constraints": "Contraintes du corps",
+    "constraintField": "Champ",
+    "constraintType": "Type",
+    "constraintRequired": "Requis",
+    "constraintRules": "Règles",
+    "yes": "Oui",
+    "no": "Non",
+    "minLength": "{{value}} caractères min.",
+    "maxLength": "{{value}} caractères max.",
+    "minimum": "≥ {{value}}",
+    "maximum": "≤ {{value}}"
+  }
+}
